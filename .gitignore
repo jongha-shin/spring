@@ -104,3 +104,9 @@ local.properties
 .sts4-cache/
 
 # End of https://www.gitignore.io/api/eclipse
+
+
+# tomcat server file ignore
+Tomcat v8.5 Server at localhost-config/
+
+
