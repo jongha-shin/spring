@@ -72,6 +72,17 @@ public class BitCalendarController {
 		
 		return "forward:/calendarlist.do";		
 	}
+	
+	@RequestMapping(value="caldetail.do", method = {RequestMethod.GET, RequestMethod.POST} )
+	public String caldetail(Model model, int seq) {
+		model.addAttribute("doc_title", "일정 상세보기");
+		
+		CalendarDto dto = service.caldetail(seq);
+		
+		model.addAttribute("dto", dto);
+		return "caldetail.tiles";
+	}
+	
 }
 
 

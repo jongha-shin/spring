@@ -9,4 +9,6 @@ public interface BitCalendarDao {
 	public List<CalendarDto> getCalendarList(CalendarDto cal);
 	
 	public boolean writeCalendar(CalendarDto cal);
+
+	public CalendarDto caldetail(int seq);
 }

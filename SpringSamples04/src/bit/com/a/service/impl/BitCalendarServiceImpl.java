@@ -24,6 +24,11 @@ public class BitCalendarServiceImpl implements BitCalendarService {
 	public boolean writeCalendar(CalendarDto cal) {		
 		return calendarDao.writeCalendar(cal);		
 	}
+
+	@Override
+	public CalendarDto caldetail(int seq) {
+		return calendarDao.caldetail(seq);
+	}
 	
 }
 

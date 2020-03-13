@@ -27,6 +27,12 @@ public class BitCalendarDaoImpl implements BitCalendarDao {
 		int n = sqlSession.insert(ns + "writeCalendar", cal); 
 		return n>0?true:false;
 	}
+
+	@Override
+	public CalendarDto caldetail(int seq) {
+		CalendarDto dto = sqlSession.selectOne(ns+"getOne", seq);
+		return dto;
+	}
 	
 }
 

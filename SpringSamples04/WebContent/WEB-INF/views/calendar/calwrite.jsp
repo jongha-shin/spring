@@ -112,3 +112,34 @@ String url=String.format("%s?year=%s&month=%s",
 
 <div style="text-align: left"><a href='<%=url%>'>일정보기</a></div>
 
+<script type="text/javascript">
+setday();
+$("select[name='day']").val("<%=day %>");
+
+$(document).ready(function () {	
+	$("select[name='month']").change( setday );	
+});
+
+function setday() {
+	// 해당년도의 월을 통해서 마지막 날짜를 구한다.
+	var year = $("select[name='year']").val();
+	var month = $("select[name='month']").val();
+	
+	var lastday = (new Date(year, month, 0)).getDate();
+//	alert(lastday);
+	
+	// select 날짜 적용
+	var str = "";
+	for(i = 1;i <= lastday; i++){
+		str += "<option value='" + i + "'>" + i + "</option>";
+	}
+	$("select[name='day']").html( str );
+
+	if(<%=day%> > lastday){
+		$("select[name='day']").val("1");
+	}else{
+		$("select[name='day']").val("<%=day %>");
+	}
+}
+
+</script>

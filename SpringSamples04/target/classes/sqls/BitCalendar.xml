@@ -20,9 +20,7 @@
 	VALUES(SEQ_CAL.NEXTVAL, #{id}, #{title}, #{content}, #{rdate}, SYSDATE)
 </insert>
 
-<select id="getDay" 
-	parameterType="bit.com.a.model.CalendarDto"
-	resultType="bit.com.a.model.CalendarDto">	
+<select id="getOne" parameterType="java.lang.Integer" resultType="bit.com.a.model.CalendarDto">	
 	SELECT SEQ, ID, TITLE, CONTENT, RDATE, WDATE
 	FROM CALENDAR
 	WHERE SEQ=#{seq}	

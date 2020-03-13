@@ -1,5 +1,7 @@
 package bit.com.a.util;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import bit.com.a.model.CalendarDto;
@@ -89,6 +91,19 @@ public class CalendarUtil {
 			str = msg.trim();	
 		}
 		return str;
+	}
+	
+	public static String toDates(String mdate){
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy년 MM월 dd일 hh시 mm분");
+		
+		String s = mdate.substring(0, 4) + "-" 	// yyyy
+				+ mdate.substring(4, 6) + "-"	// MM
+				+ mdate.substring(6, 8) + " " 	// dd
+				+ mdate.substring(8, 10) + ":"	// hh
+				+ mdate.substring(10, 12) + ":00"; 
+		Timestamp d = Timestamp.valueOf(s);
+		
+		return sdf.format(d);	
 	}
 }
 

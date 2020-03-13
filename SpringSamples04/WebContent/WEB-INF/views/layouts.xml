@@ -46,6 +46,9 @@
 	<put-attribute name="main" value="/WEB-INF/views/calendar/calwrite.jsp"/>
 </definition>
 
+<definition name="caldetail.tiles" extends="calendar.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/calendar/caldetail.jsp"/>
+</definition>
 
 <definition name="sessionOut.tiles" extends="bbslist.tiles">
 	<put-attribute name="main" value="/WEB-INF/views/login/SessionOut.jsp"/>
