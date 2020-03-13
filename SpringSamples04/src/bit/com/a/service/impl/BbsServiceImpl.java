@@ -50,9 +50,9 @@ public class BbsServiceImpl implements BbsService {
 	}
 	
 	@Override
-	public void reply(BbsDto bbs) {
+	public int reply(BbsDto bbs) {
 		bbsDao.replyBbsUpdate(bbs);
-		bbsDao.replyBbsInsert(bbs);	
+		return bbsDao.replyBbsInsert(bbs);	
 	}
 			
 }

@@ -56,9 +56,9 @@ public class BbsDaoImpl implements BbsDao {
 	}
 
 	@Override
-	public boolean replyBbsInsert(BbsDto bbs) {
-		sqlSession.insert(ns+"replyBbsInsert", bbs);
-		return true;
+	public int replyBbsInsert(BbsDto bbs) {
+		int count = sqlSession.insert(ns+"replyBbsInsert", bbs);
+		return count;
 	}
 }
 

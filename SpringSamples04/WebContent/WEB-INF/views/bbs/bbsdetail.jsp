@@ -56,7 +56,7 @@ $("#_btnUpdate").click(function() {
 });
 $("#_btnReply").click(function() {	
 	alert('답글달기');	
-	$("#_frmForm").attr({ "target":"_self", "action":"answer.do" }).submit();
+	$("#_frmForm").attr({ "target":"_self", "action":"bbsanswer.do" }).submit();
 });
 $("#_btnDel").click(function() {			
 	$("#_frmForm").attr({ "target":"_self", "action":"bbsdelete.do" }).submit();

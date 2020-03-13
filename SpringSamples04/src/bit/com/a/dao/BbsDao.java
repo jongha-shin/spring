@@ -18,5 +18,5 @@ public interface BbsDao {
 	public void deleteBbs(int seq);
 	
 	public boolean replyBbsUpdate(BbsDto bbs);
-	public boolean replyBbsInsert(BbsDto bbs);
+	public int replyBbsInsert(BbsDto bbs);
 }

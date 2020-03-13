@@ -17,5 +17,5 @@ public interface BbsService {
 	public void updateBbs(BbsDto bbs);	
 	public void deleteBbs(int seq);
 	
-	public void reply(BbsDto bbs);
+	public int reply(BbsDto bbs);
 }

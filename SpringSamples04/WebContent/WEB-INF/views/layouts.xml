@@ -31,6 +31,10 @@
 	<put-attribute name="main" value="/WEB-INF/views/bbs/bbsupdate.jsp"/>
 </definition>
 
+<definition name="bbsanswer.tiles" extends="bbslist.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/bbs/bbsanswer.jsp"/>
+</definition>
+
 
 <!-- calendar -->
 <definition name="calendar.tiles" extends="bbslist.tiles">

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import bit.com.a.model.BbsDto;
 import bit.com.a.model.BbsParam;
@@ -95,18 +96,26 @@ public class BitBbsController {
 		return "redirect:/bbslist.do";		
 	}
 	
-	@RequestMapping(value = "answer.do", method = {RequestMethod.GET, RequestMethod.POST})
+	@RequestMapping(value = "bbsanswer.do", method = {RequestMethod.GET, RequestMethod.POST})
 	public String answer(int seq, Model model) throws Exception {		
 		BbsDto bbs=null;		
 		bbs=bbsService.getBbs(seq);
 		model.addAttribute("bbs", bbs);
-		return "answer.tiles";
+		return "bbsanswer.tiles";
 	}
 	
-	@RequestMapping(value = "answerAf.do", method = {RequestMethod.GET, RequestMethod.POST})
-	public String answerAf(BbsDto bbs, Model model) throws Exception {		
-		bbsService.reply(bbs);		
-		return "redirect:/bbslist.do";
+	@ResponseBody
+	@RequestMapping(value = "answerAf.do", method = RequestMethod.GET)
+	public String answerBbs(BbsDto bbs) {
+		String str="";
+		
+		int count = bbsService.reply(bbs);
+		if(count == 1 ) {
+			str ="ok";
+		}else {
+			str="no";
+		}
+		return str;
 	}
 }
 
