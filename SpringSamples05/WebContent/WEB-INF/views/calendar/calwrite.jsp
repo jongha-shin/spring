@@ -18,6 +18,8 @@ int tmonth=cal.get(Calendar.MONTH )+1;//월
 int tday=cal.get(Calendar.DATE);//일
 int thour=cal.get(Calendar.HOUR_OF_DAY);//24시
 int tmin=cal.get(Calendar.MINUTE);//분
+
+
 %>
 
 <form action="calwriteAf.do" method="post">

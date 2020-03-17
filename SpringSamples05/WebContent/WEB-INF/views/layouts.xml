@@ -58,10 +58,24 @@
 	<put-attribute name="main" value="/WEB-INF/views/calendar/calupdate.jsp"/>
 </definition>
 
+
+<!-- psd -->
+<definition name="pdslist.tiles" extends="bbslist.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/pds/pdslist.jsp"/>
+</definition>
+<definition name="pdswrite.tiles" extends="bbslist.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/pds/pdswrite.jsp"/>
+</definition>
+<definition name="pdsdetail.tiles" extends="bbslist.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/pds/pdsdetail.jsp"/>
+</definition>
+<definition name="pdsupdate.tiles" extends="bbslist.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/pds/pdsupdate.jsp"/>
+</definition>
+
 <definition name="sessionOut.tiles" extends="bbslist.tiles">
 	<put-attribute name="main" value="/WEB-INF/views/login/SessionOut.jsp"/>
 </definition>
-
 </tiles-definitions>
 
 

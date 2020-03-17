@@ -9,7 +9,9 @@
 			<!-- 일정관리 -->
 			<li><a href="calendarlist.do" title="일정관리">일정관리</a></li>
 			<!-- 자료실 -->
+			<li><a href="pdslist.do" title="자료실">자료실</a></li>
 			<!-- 투표하기 -->
+			
 			<!-- 채팅 -->
 			<!-- Youtube -->
 						
