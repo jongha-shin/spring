@@ -88,7 +88,7 @@ public class MemberController {
 		}		
 	}
 	
-	@RequestMapping(value = "sessionOut.do", method = RequestMethod.GET)
+	@RequestMapping(value = "logout.do", method = RequestMethod.GET)
 	public String sessionOut() {	
 		return "sessionOut.tiles";
 	}	

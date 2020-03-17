@@ -1,5 +1,8 @@
 package bit.com.a.util;
 
+
+import java.sql.Date;
+import java.util.Calendar;
 import java.util.List;
 
 import bit.com.a.model.CalendarDto;
@@ -94,6 +97,47 @@ public class CalendarUtil {
 	public static String yyyymmddhhmm(int year, int month, int day,
 			int hour, int min){
 		return yyyymmdd(year,month,day)+two(hour)+two(min);
+	}
+	
+	// 문자열 "2020-03-17" -> java.lang.Date 로 변경
+	public static Date toDate(int year, int month, int day) {
+		String s = year + "-" + two(month+"") + "-" + two(day+"");
+		Date d = Date.valueOf(s);
+		return d;
+	}
+	
+	// 투표 종료 판별
+	public static String pollState(java.util.Date d) {
+		String s1 = "<div style='color:RED'>[종료]</div>";
+		String s2 = "<div style='color:BLUE'>[진행중]</div>";
+		
+		return isEnd(d)?s1:s2;
+	}
+	
+	// 연,월,일 만으로 비교. 오늘 > 종료 = 투표 마감
+	public static boolean isEnd(java.util.Date d) {
+		Calendar c = Calendar.getInstance();
+		c.setTime(d);
+		Calendar now = Calendar.getInstance();
+		
+		// 오늘날짜가 마감일 보다 큰지  = 지난 경우: true인경우 투표 못함 
+		boolean b = Integer.parseInt( StringCal(now) ) > Integer.parseInt( StringCal(c) );
+		
+		return b; 
+	}
+	
+	
+	// 달력의 날짜를 20200317 형식으로 변환
+	public static String StringCal(Calendar dd) {
+		String s = "";
+		
+		int year = dd.get(Calendar.YEAR);
+		int month = dd.get(Calendar.MONTH) + 1;
+		int day = dd.get(Calendar.DATE);
+		
+		s = year+"" + two(month+"") + two(day+1);
+		
+		return s;
 	}
 }
 
