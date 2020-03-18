@@ -90,8 +90,10 @@
 	<put-attribute name="main" value="/WEB-INF/views/poll/pollresult.jsp"/>
 </definition>
 
-
-
+<!-- chatting -->
+<definition name="chatting.tiles" extends="bbslist.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/webchat/chatting.jsp"/>
+</definition>
 
 
 <definition name="sessionOut.tiles" extends="bbslist.tiles">
