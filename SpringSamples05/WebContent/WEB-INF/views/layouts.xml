@@ -83,8 +83,12 @@
 <definition name="pollmake.tiles" extends="bbslist.tiles">
 	<put-attribute name="main" value="/WEB-INF/views/poll/pollmake.jsp"/>
 </definition>
-
-
+<definition name="polldetail.tiles" extends="bbslist.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/poll/polldetail.jsp"/>
+</definition>
+<definition name="pollresult.tiles" extends="bbslist.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/poll/pollresult.jsp"/>
+</definition>
 
 
 

@@ -45,7 +45,6 @@ public class BitPollServiceImpl implements BitPollService {
 
 	@Override
 	public void makePoll(PollBean pbean) {
-		System.out.println("여기야이ㅏ러ㅣ아러ㅣ아러"+pbean.toString());
 		// 투표 질문
 		PollDto poll = new PollDto(pbean.getId(), pbean.getQuestion(), pbean.getSdate(),
 								   pbean.getEdate(), pbean.getItemcount(), 0);
@@ -60,6 +59,25 @@ public class BitPollServiceImpl implements BitPollService {
 			pollDao.makePollSub(pollsub);
 		}
 	}
+
+	@Override
+	public PollDto getPoll(PollDto poll) {
+		return pollDao.getPoll(poll);
+	}
+
+	@Override
+	public List<PollSubDto> getPollSubList(PollDto poll) {
+		return pollDao.getPollSubList(poll);
+	}
+
+	@Override
+	public void polling(Voter voter) {
+		pollDao.pollingPoll(voter);
+		pollDao.pollingSub(voter);
+		pollDao.pollingVoter(voter);
+	}
+	
+	
 	
 	
 }

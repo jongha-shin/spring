@@ -31,6 +31,38 @@
 	VALUES(POLLSUB_SEQ.NEXTVAL, (SELECT NVL(MAX(POLLID), 0) FROM POLL), #{answer}, 0)
 </insert>
 
+<!-- 투표하기 -->
+	<!-- 투표질문 -->
+<select id="getPoll" parameterType="bit.com.a.model.PollDto" resultType="bit.com.a.model.PollDto">
+	SELECT POLLID, ID, QUESTION, SDATE, EDATE, ITEMCOUNT, POLLTOTAL, REGDATE
+	FROM POLL
+	WHERE POLLID=#{pollid}
+</select>
 
+	<!-- 투표보기 -->
+<select id="getPollSubList" parameterType="bit.com.a.model.PollDto" resultType="bit.com.a.model.PollSubDto">
+	SELECT POLLSUBID, POLLID, ANSWER, ACOUNT
+	FROM POLLSUB
+	WHERE POLLID=#{pollid}
+</select>
 
+<!-- 투표자 등록(voter) -->
+<insert id="pollingVote" parameterType="bit.com.a.model.Voter">
+	INSERT INTO VOTER(VOTERID, POLLID, POLLSUBID, ID, REGDATE)
+	VALUES(VOTER_SEQ.NEXTVAL, #{pollid}, #{pollsubid}, #{id}, SYSDATE)
+</insert>	
+	
+<!-- 어느 투표질문에 몇명? -->
+<update id="pollingPoll" parameterType="bit.com.a.model.Voter">
+	UPDATE POLL
+	SET POLLTOTAL = POLLTOTAL+1
+	WHERE POLLID = #{pollid}
+</update>
+
+<!-- 어느 보기에 선택했는지? -->
+<update id="pollingSub" parameterType="bit.com.a.model.Voter">
+	UPDATE POLLSUB
+	SET ACOUNT = ACOUNT+1
+	WHERE POLLID=#{pollid} AND POLLSUBID=#{pollsubid}
+</update>
 </mapper>

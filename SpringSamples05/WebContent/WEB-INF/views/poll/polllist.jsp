@@ -13,7 +13,7 @@
 <c:if test="${login.auth eq '1'}">
 
 <table class="list_table" style="width:95%">
-<col width="50"><col width="50"><col width="300"><col width="100">
+<col width="50"><col width="50"><col width="300"><col width="100"><col width="100">
 <col width="100"><col width="50"><col width="50"><col width="100">
 
 <tr>
@@ -49,7 +49,7 @@
 <!-- 사용자 -->
 <c:if test="${login.auth eq '3'}">
 <table class="list_table" style="width:95%">
-<col width="50"><col width="50"><col width="300"><col width="100">
+<col width="50"><col width="50"><col width="300"><col width="100"><col width="100">
 <col width="100"><col width="50"><col width="50"><col width="100">
 
 <tr>
