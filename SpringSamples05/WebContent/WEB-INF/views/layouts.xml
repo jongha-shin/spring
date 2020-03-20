@@ -95,6 +95,14 @@
 	<put-attribute name="main" value="/WEB-INF/views/webchat/chatting.jsp"/>
 </definition>
 
+<!-- youtube -->
+<definition name="yutube.tiles" extends="bbslist.tiles">
+	<put-attribute name="left_menu" value="/WEB-INF/views/youtube/left_youtube.jsp"/>
+	<put-attribute name="main" value="/WEB-INF/views/youtube/youlist.jsp"/>
+</definition>
+<definition name="mytube.tiles" extends="yutube.tiles">
+	<put-attribute name="main" value="/WEB-INF/views/youtube/mytube.jsp"/>
+</definition>
 
 <definition name="sessionOut.tiles" extends="bbslist.tiles">
 	<put-attribute name="main" value="/WEB-INF/views/login/SessionOut.jsp"/>

@@ -15,7 +15,7 @@
 			<!-- 채팅 -->
 			<li><a href="chatting.do" title="채팅">채팅</a></li>
 			<!-- Youtube -->
-						
+			<li><a href="yutube.do" title="유투브">유투브</a></li>
 			<!-- 투표만들기(관리자) -->			
 		</ul>	
 	</div>
